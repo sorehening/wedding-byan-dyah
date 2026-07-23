@@ -87,15 +87,15 @@ export const data = {
     bank: [
         {
             id: 1,
-            name: 'Dyah Awatari R.',
+            name: 'Tasbihan Pratama',
             icon: './src/assets/images/bca.png',
-            rekening: '901710007173'
+            rekening: '700007805695'
         },
         {
             id: 2,
             name: 'Dyah Awatari R.',
             icon: './src/assets/images/bri.png',
-            rekening: '109493314684'
+            rekening: '109201030975508'
         },
     ],
 
