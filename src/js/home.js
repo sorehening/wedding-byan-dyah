@@ -55,7 +55,7 @@ export const home = () => {
     };
 
     const startCountdown = (homeTime, timeData) => {
-        const {year, month, date} = timeData.marriage;
+        const {year, month, date} = timeData.reception;
         const endTime = new Date(`${String(year)}-${String(monthNameToNumber(month)).padStart(2, '0')}-${String(date).padStart(2, '0')}T00:00:00`);
 
         updateCountdown(endTime, homeTime);
