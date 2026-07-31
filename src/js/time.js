@@ -6,9 +6,11 @@ export const time = () => {
     const mapLink = timeContainer.querySelector('a');
     const addressParagraph = timeContainer.querySelector('a + p');
 
-    const date = new Date(
-    `${data.time.reception.year}-${data.time.reception.month}-${data.time.reception.date} ${data.time.reception.hours.start}`
-);
+    const createTimeListItem = (title, details) => (
+        `<h3>${title}</h3>
+         <p>${details.day}, ${details.date} ${details.month} ${details.year} <br> 
+         Pukul ${details.hours.start} WIB sd ${details.hours.finish}</p>`
+    );
 
     marriageDiv.innerHTML = createTimeListItem('Akad', data.time.marriage);
     receptionDiv.innerHTML = createTimeListItem('Resepsi', data.time.reception);
