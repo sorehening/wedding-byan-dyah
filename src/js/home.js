@@ -55,12 +55,25 @@ export const home = () => {
     };
 
     const startCountdown = (homeTime, timeData) => {
-        const {year, month, date} = timeData.reception;
-        const endTime = new Date(`${String(year)}-${String(monthNameToNumber(month)).padStart(2, '0')}-${String(date).padStart(2, '0')}T00:00:00`);
+    const {year, month, date, hours} = timeData.reception;
 
+    const [hour, minute] = hours.start.split('.').map(Number);
+
+    const endTime = new Date(
+        Number(year),
+        monthNameToNumber(month) - 1,
+        Number(date),
+        hour,
+        minute,
+        0
+    ).getTime();
+
+    updateCountdown(endTime, homeTime);
+
+    setInterval(() => {
         updateCountdown(endTime, homeTime);
-        setInterval(() => updateCountdown(endTime, homeTime), 1000);
-    };
+    }, 1000);
+};
 
     const initializeHome = () => {
         const {bride, time, link} = data;
